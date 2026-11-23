@@ -1,0 +1,76 @@
+:root {
+  --verde: #0f766e;
+  --verde-claro: #ccfbf1;
+  --rojo: #dc2626;
+  --gris: #64748b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f766e, #134e4a);
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.app {
+  width: 100%;
+  max-width: 36rem;
+  margin: 2rem 0;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+  align-self: flex-start;
+}
+h1 { margin: 0 0 1rem; color: var(--verde); text-align: center; font-size: 1.6rem; }
+form { display: flex; gap: .5rem; }
+input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: .7rem;
+  border: 2px solid #cbd5e1;
+  border-radius: .5rem;
+  font-size: 1rem;
+}
+input[type="text"]:focus { outline: none; border-color: var(--verde); }
+button {
+  border: 0;
+  border-radius: .5rem;
+  padding: .6rem .9rem;
+  font-size: .9rem;
+  color: #fff;
+  background: var(--verde);
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
+.btn-editar { background: #d97706; }
+.btn-eliminar { background: var(--rojo); }
+.error { color: var(--rojo); margin: .5rem 0 0; font-size: .9rem; }
+.contador { color: var(--gris); font-size: .85rem; margin: 1rem 0 .5rem; }
+ul { list-style: none; margin: 0; padding: 0; }
+li {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .7rem;
+  margin-bottom: .5rem;
+  background: #f8fafc;
+  border-left: 4px solid var(--verde);
+  border-radius: .5rem;
+}
+li.completa { border-left-color: #94a3b8; }
+li.completa .texto { text-decoration: line-through; color: #94a3b8; }
+li input[type="checkbox"] { width: 1.2rem; height: 1.2rem; accent-color: var(--verde); }
+.texto { flex: 1; word-break: break-word; }
+.acciones { display: flex; gap: .4rem; }
+.vacio { text-align: center; color: var(--gris); padding: 1rem; }
+
+@media (max-width: 480px) {
+  .app { margin: .5rem 0; padding: 1rem; }
+  form { flex-direction: column; }
+  li { flex-wrap: wrap; }
+  .acciones { width: 100%; }
+  .acciones button { flex: 1; }
+}
